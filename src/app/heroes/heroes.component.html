@@ -1,0 +1,31 @@
+<!--<div>
+    <p>heroes works!</p>
+    <h2>{{hero.name | uppercase}}</h2>
+    <h2>ID: {{hero.id}}</h2>
+    <h2>Name: {{hero.name}}</h2>
+</div>
+
+Hero name: <input type="text" [(ngModel)]="hero.name" />--> <!--Aggiorno il valore-->
+
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of heroes"> <!--Dichiaro un oggetto item che conterra elementi dell'oggetto heroes -->
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>
+                <button (click)="selectHero(item)">Info</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<div *ngIf="slectedHero"> Mostro questa porzione solo se il valore slectedHero è settato
+    <h2>ID: {{slectedHero?.id}}</h2>
+    <h2>Name: {{slectedHero?.name}}</h2>
+</div> -->
+
+<app-hero-detail [hero]="slectedHero"></app-hero-detail>
